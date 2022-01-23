@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 디렉티브</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>1.기본적인 함수 호출</h1>
+        {{username.toUpperCase()}}<br>
+        <hr>
+        <h1>2. filter 적용</h1>
+        {{username|toUpper}}<br>
+        {{username|toUpper|toSlice}}<br>
+    </div>
+    <div id="app2">
+        이름:{{username|toUpper|toSlice(1,4)}}
+    </div>
+    <script>
+        // 전역필터
+        // arrow 표현식
+        // var fun = (param)=>param.toUpperCase();
+    
+        // arrow 표현식
+        Vue.filter("toUpper", (param)=>param.toUpperCase());
+    
+        // 함수표현식
+        // var fun = function(param){
+        //     return param.toUpperCase();
+        // };
+
+        // Vue.filter("toUpper", fun);
+    
+        
+        var app = new Vue({
+            el: '#app',
+            data: {
+              username:"hongKilDONG"
+            }
+        });
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+              username:"parkKilDONG"
+            }
+        });
+    </script>
+</body>
+
+</html>

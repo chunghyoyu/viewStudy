@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //일급객체
+    function fun(){
+        console.log("fun");
+    }
+
+    fun();
+
+    //1. 변수에 함수 저장가능
+    var x = fun;
+
+    x();
+
+    //2. 변수에 함수 저장가능
+    function fun2(){
+        x();
+    }
+
+    fun2(fun);
+
+    //3. 변수에 함수 저장가능
+    function fun3(){
+        return fun;
+    }
+
+    var x = fun3();
+    x();
+
+    var fun3 = 100;
+</script>
+<body>
+    
+</body>
+</html>

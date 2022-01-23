@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!--1. 개발환경설치 끝-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    이름을 입력하세요:<input v-model.text.lazy="username"/> <span v-if="username.length < 3">이름은 3글자 이상입니다.</span><br>
+    나이를 입력하세요:<input v-model.number.lazy="age"/> <span v-if="age < 10 || age > 120">나이는 10세 이상이고 120세 이하</span>
+</div>
+<script>
+
+let model = {
+    username:'',
+    age:'',
+    message:''
+};
+
+var app = new Vue({
+el: '#app',
+data: model 
+});
+
+
+</script>
+</body>
+</html>
